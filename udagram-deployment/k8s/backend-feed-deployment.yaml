@@ -1,15 +1,18 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
- labels:
-   service: udagram-backend-feed
- name: udagram-backend-feed
+  labels:
+    app: udagram-backend-feed
+  name: udagram-backend-feed
 spec:
-  replicas: 2
+  replicas: 3
+  selector:
+    matchLabels:
+      app: udagram-backend-feed
   template:
     metadata:
       labels:
-        service: udagram-backend-feed
+        app: udagram-backend-feed
     spec:
       containers:
       - image: avakashd/udagram-backend-feed
@@ -17,10 +20,10 @@ spec:
         imagePullPolicy: Always
         resources:
           requests:
-            memory: "128Mi"
+            memory: "64Mi"
             cpu: "250m"
           limits:
-            memory: "2048Mi"
+            memory: "1024Mi"
             cpu: "500m"
         env:
         - name: URL
