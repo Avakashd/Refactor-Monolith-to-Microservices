@@ -6,7 +6,7 @@ data:
   AWS_REGION: eu-west-1
   JWT_SECRET: hello
   POSTGRES_DB: postgres
-  POSTGRES_HOST: avakashd.c8eqyu2gosg1.us-east-1.rds.amazonaws.com
-  URL: http://af1e24cc65c644abf8f0507d82b8a5e5-2076379747.eu-west-2.elb.amazonaws.com:8100
+  POSTGRES_HOST: avakashd-rds.cfywob1wrqgf.us-east-2.rds.amazonaws.com
+  URL: https://28B32E08FA15CAF03DDF0D2B82D45590.gr7.us-east-2.eks.amazonaws.com:8100
 metadata:
   name: env-config
