@@ -3,10 +3,10 @@ kind: ConfigMap
 data:
   AWS_BUCKET: avakashd-dev
   AWS_PROFILE: default
-  AWS_REGION: eu-west-1
+  AWS_REGION: us-east-2
   JWT_SECRET: hello
   POSTGRES_DB: postgres
   POSTGRES_HOST: avakashd-rds.cfywob1wrqgf.us-east-2.rds.amazonaws.com
-  URL: https://28B32E08FA15CAF03DDF0D2B82D45590.gr7.us-east-2.eks.amazonaws.com:8100
+  URL: http://localhost:8100
 metadata:
   name: env-config

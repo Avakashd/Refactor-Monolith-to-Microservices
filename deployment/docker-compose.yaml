@@ -6,10 +6,10 @@ services:
           - 8080:8080
       restart: always
       depends_on:
-        - udagram-backend-user
-        - udagram-backend-feed
-  udagram-backend-user:
-    image: avakashd/udagram-backend-user
+        - backend-user
+        - backend-feed
+  backend-user:
+    image: avakashd/backend-user
     environment:
       POSTGRES_USERNAME: $POSTGRES_USERNAME
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD
@@ -20,8 +20,8 @@ services:
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
-  udagram-backend-feed:
-    image: avakashd/udagram-backend-feed
+  backend-feed:
+    image: avakashd/backend-feed
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -34,7 +34,7 @@ services:
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
-  udagram-frontend:
-    image: avakashd/udagram-frontend
+  frontend:
+    image: avakashd/frontend
     ports:
       - "8100:80"
